@@ -61,7 +61,12 @@
           "typescript",
           "typescriptreact",
           "astro"
-        ]
+        ],
+        "markdownlint.config": {
+          "MD025": {
+            "front_matter_title": ""
+          }
+        }
       }
     }
   }
