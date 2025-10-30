@@ -54,7 +54,14 @@
         "[typescriptreact]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
-        "tailwindCSS.emmetCompletions": true
+        "tailwindCSS.emmetCompletions": true,
+        "eslint.probe": [
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+          "astro"
+        ]
       }
     }
   }
