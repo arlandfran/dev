@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+interface Project {
+  name: string;
+  description: string;
+  github: string;
+  url: string;
+}
+
+const title = "Projects";
+const description = "My Code Institute portfolio and other notable projects";
+
+const projects: Project[] = [
+  {
+    name: "The Beginner's Gambit",
+    description: "Chess rules as documentation",
+    github: "the-beginners-gambit-mdx",
+    url: "https://the-beginners-gambit.vercel.app/",
+  },
+  {
+    name: "Anime Corner Rankings",
+    description: "Anime Corner's weekly graphic translated to the web",
+    github: "anime-corner-rankings",
+    url: "https://anime-corner-rankings.vercel.app/",
+  },
+  {
+    name: "h17ku",
+    description: "Twitter inspired social media platform for haiku",
+    github: "h17ku",
+    url: "https://h17ku.onrender.com/",
+  },
+  {
+    name: "White Library",
+    description: "Digital store for limited edition Black Library collectibles",
+    github: "white-library",
+    url: "https://white-library.onrender.com/",
+  },
+];
+---
+
+<Layout {title} {description}>
+  <h1>{description}</h1>
+  {
+    projects.map((project) => (
+      <article>
+        <header class="flex flex-wrap justify-between">
+          <h2>{project.name}</h2>
+          <ul class="flex gap-2">
+            <li>
+              <a
+                href={`https://github.com/arlandfran/${project.github}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href={project.url} target="_blank" rel="noopener noreferrer">
+                Live Project
+              </a>
+            </li>
+          </ul>
+        </header>
+        <p>{project.description}</p>
+      </article>
+    ))
+  }
+</Layout>
