@@ -19,6 +19,8 @@ const { frontmatter } = Astro.props;
     <meta name="description" content={frontmatter.description} />
   </head>
   <body>
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
