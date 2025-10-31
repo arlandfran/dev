@@ -1,12 +1,15 @@
 ---
+import Breadcrumb from "../components/Breadcrumb.astro";
+import BreadcrumbJsonLd from "../components/BreadcrumbJsonLd.astro";
 import "../styles/global.css";
 
 interface Props {
   title: string;
   description: string;
+  is404?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, is404 = false } = Astro.props;
 ---
 
 <html lang="en">
@@ -16,8 +19,10 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {!is404 && <BreadcrumbJsonLd />}
   </head>
   <body>
+    <Breadcrumb is404={is404} />
     <main>
       <slot />
     </main>

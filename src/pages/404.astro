@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Page Not Found";
+const description = "The page you are looking for does not exist.";
+---
+
+<Layout {title} {description} is404={true}>
+  <h1>Sorry, the page you're looking for doesn't exist.</h1>
+  <p>Return to <a href="/">home page.</a></p>
+</Layout>
