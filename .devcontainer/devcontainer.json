@@ -55,6 +55,9 @@
           "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
         "tailwindCSS.emmetCompletions": true,
+        "files.associations": {
+          "*.css": "tailwindcss"
+        },
         "eslint.probe": [
           "javascript",
           "javascriptreact",
