@@ -9,18 +9,20 @@ const { is404 } = Astro.props;
 const segments = getSegments(Astro.url.pathname);
 ---
 
-<nav aria-label="Breadcrumb" class="mb-4">
-  <ol
-    class="text-muted-foreground inline-flex flex-wrap font-mono font-medium tracking-tight"
-  >
+<nav aria-label="Breadcrumb">
+  <ol class="inline-flex flex-wrap font-mono">
     <li class="inline-flex items-center">
-      <a aria-current={segments.length === 0 ? "page" : undefined} href="/">
+      <a
+        aria-current={segments.length === 0 ? "page" : undefined}
+        href="/"
+        class="text-neutral-400 hover:text-neutral-200"
+      >
         <span class="sr-only">home</span>
         <span aria-hidden="true">arland@dev:~</span>
       </a>
       {
         segments.length === 0 ? (
-          <span aria-hidden="true" class="text-foreground ml-0.5 font-semibold">
+          <span aria-hidden="true" class="ml-0.5 font-medium">
             $
           </span>
         ) : (
@@ -30,10 +32,7 @@ const segments = getSegments(Astro.url.pathname);
     </li>
     {
       is404 ? (
-        <li
-          aria-current="page"
-          class="text-foreground content-center font-semibold"
-        >
+        <li aria-current="page" class="content-center font-medium">
           page-not-found
         </li>
       ) : (
@@ -43,7 +42,7 @@ const segments = getSegments(Astro.url.pathname);
             class="inline-flex items-center"
           >
             {isLast ? (
-              <span class="text-foreground font-semibold">{name}</span>
+              <span class="font-medium">{name}</span>
             ) : (
               <>
                 <a class="content-center" href={href}>
