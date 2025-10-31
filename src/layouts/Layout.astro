@@ -2,6 +2,7 @@
 import { Font } from "astro:assets";
 import Breadcrumb from "../components/Breadcrumb.astro";
 import BreadcrumbJsonLd from "../components/BreadcrumbJsonLd.astro";
+import PrimaryNav from "../components/PrimaryNav.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -13,7 +14,7 @@ interface Props {
 const { title, description, is404 = false } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="bg-neutral-950">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -24,9 +25,12 @@ const { title, description, is404 = false } = Astro.props;
     <Font cssVariable="--font-ibm-plex-mono" preload />
     {!is404 && <BreadcrumbJsonLd />}
   </head>
-  <body>
-    <Breadcrumb is404={is404} />
-    <main>
+  <body class="min-h-screen max-w-[80ch] p-16 tracking-tight text-neutral-200">
+    <header class="flex flex-col gap-4">
+      <Breadcrumb is404={is404} />
+      <PrimaryNav />
+    </header>
+    <main class="mt-8 flex flex-col gap-4">
       <slot />
     </main>
   </body>

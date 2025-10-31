@@ -1,0 +1,40 @@
+---
+interface Link {
+  href: string;
+  label: string;
+  external?: boolean;
+}
+
+const links: Link[] = [
+  { href: "/projects", label: "Projects" },
+  { href: "/posts", label: "Posts" },
+  {
+    href: "https://github.com/arlandfran",
+    label: "GitHub",
+    external: true,
+  },
+  {
+    href: "https://www.linkedin.com/in/arlandtorres",
+    label: "LinkedIn",
+    external: true,
+  },
+];
+---
+
+<nav aria-label="Primary">
+  <ul class="flex flex-wrap gap-x-4">
+    {
+      links.map((link) => (
+        <li class="hover:underline">
+          <a
+            href={link.href}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noopener noreferrer" : undefined}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
