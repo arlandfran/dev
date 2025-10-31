@@ -11,7 +11,7 @@ export default defineConfig({
         name: "IBM Plex Sans",
         cssVariable: "--font-ibm-plex-sans",
         provider: fontProviders.google(),
-        weights: ["400", "600"],
+        weights: ["400 600"],
         subsets: ["latin"],
         fallbacks: ["sans-serif"],
       },
@@ -25,7 +25,9 @@ export default defineConfig({
       },
     ],
   },
+
   site: "https://arland.dev",
+
   vite: {
     plugins: [tailwindcss()],
   },
