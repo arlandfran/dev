@@ -1,6 +1,9 @@
 {
   "name": "Node.js & TypeScript",
   "image": "mcr.microsoft.com/devcontainers/typescript-node",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli": {}
+  },
   "forwardPorts": [4321],
   "portsAttributes": {
     "4321": {
